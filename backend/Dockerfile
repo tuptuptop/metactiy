@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install --only=production --no-package-lock
+RUN npm install --only=production
 
 COPY . .
 
