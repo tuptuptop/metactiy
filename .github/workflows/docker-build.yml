@@ -43,23 +43,3 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}/frontend:latest
             ghcr.io/${{ github.repository }}/frontend:${{ github.sha }}
-      
-      - name: Build and push MySQL image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./Dockerfile.mysql
-          push: true
-          tags: |
-            ghcr.io/${{ github.repository }}/mysql:latest
-            ghcr.io/${{ github.repository }}/mysql:${{ github.sha }}
-      
-      - name: Build and push Redis image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: ./Dockerfile.redis
-          push: true
-          tags: |
-            ghcr.io/${{ github.repository }}/redis:latest
-            ghcr.io/${{ github.repository }}/redis:${{ github.sha }}
