@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: metacity-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123456
+      MYSQL_DATABASE: metacity
+      MYSQL_USER: metacity
+      MYSQL_PASSWORD: metacity123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./backend/database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - metacity-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: metacity-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - metacity-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: metacity-backend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: metacity
+      DB_PASSWORD: metacity123
+      DB_NAME: metacity
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      JWT_SECRET: metacity_jwt_secret_key_production
+      JWT_EXPIRES_IN: 7d
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      - metacity-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: metacity-frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - metacity-network
+
+volumes:
+  mysql_data:
+  redis_data:
+
+networks:
+  metacity-network:
+    driver: bridge

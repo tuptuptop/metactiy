@@ -1,0 +1,146 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "元城市",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/city/list",
+      "style": {
+        "navigationBarTitleText": "城市列表",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/city/detail",
+      "style": {
+        "navigationBarTitleText": "城市详情"
+      }
+    },
+    {
+      "path": "pages/user/index",
+      "style": {
+        "navigationBarTitleText": "我的"
+      }
+    },
+    {
+      "path": "pages/user/login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/user/register",
+      "style": {
+        "navigationBarTitleText": "注册"
+      }
+    },
+    {
+      "path": "pages/user/setting",
+      "style": {
+        "navigationBarTitleText": "设置"
+      }
+    },
+    {
+      "path": "pages/user/cities",
+      "style": {
+        "navigationBarTitleText": "我的城市"
+      }
+    },
+    {
+      "path": "pages/user/points",
+      "style": {
+        "navigationBarTitleText": "积分明细"
+      }
+    },
+    {
+      "path": "pages/sign/index",
+      "style": {
+        "navigationBarTitleText": "每日签到"
+      }
+    },
+    {
+      "path": "pages/promote/index",
+      "style": {
+        "navigationBarTitleText": "推广中心"
+      }
+    },
+    {
+  "path": "pages/fund/list",
+      "style": {
+        "navigationBarTitleText": "基金列表"
+      }
+    },
+    {
+      "path": "pages/fund/detail",
+      "style": {
+        "navigationBarTitleText": "基金详情"
+      }
+    },
+    {
+      "path": "pages/notice/list",
+      "style": {
+        "navigationBarTitleText": "公告列表"
+      }
+    },
+    {
+      "path": "pages/notice/detail",
+      "style": {
+        "navigationBarTitleText": "公告详情"
+      }
+    },
+    {
+      "path": "pages/message/list",
+      "style": {
+        "navigationBarTitleText": "消息中心"
+      }
+    },
+    {
+      "path": "pages/feedback/index",
+      "style": {
+        "navigationBarTitleText": "意见反馈"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "元城市",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f8f8f8"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#1890ff",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/city/list",
+        "text": "城市",
+        "iconPath": "static/tabbar/city.png",
+        "selectedIconPath": "static/tabbar/city-active.png"
+      },
+      {
+        "pagePath": "pages/promote/index",
+        "text": "推广",
+        "iconPath": "static/tabbar/promote.png",
+        "selectedIconPath": "static/tabbar/promote-active.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "static/tabbar/user.png",
+        "selectedIconPath": "static/tabbar/user-active.png"
+      }
+    ]
+  }
+}
